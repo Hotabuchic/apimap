@@ -29,7 +29,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>20</y>
      <width>60</width>
      <height>16</height>
@@ -42,9 +42,9 @@
   <widget class="QDoubleSpinBox" name="latitude">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>17</y>
-     <width>91</width>
+     <x>50</x>
+     <y>20</y>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
@@ -64,9 +64,9 @@
   <widget class="QDoubleSpinBox" name="longitude">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>17</y>
-     <width>91</width>
+     <x>190</x>
+     <y>20</y>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
@@ -86,7 +86,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>140</x>
      <y>20</y>
      <width>60</width>
      <height>16</height>
@@ -99,9 +99,9 @@
   <widget class="QPushButton" name="btn">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>520</x>
      <y>10</y>
-     <width>121</width>
+     <width>111</width>
      <height>32</height>
     </rect>
    </property>
@@ -112,9 +112,9 @@
   <widget class="QDoubleSpinBox" name="spn">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>17</y>
-     <width>91</width>
+     <x>340</x>
+     <y>20</y>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
@@ -137,7 +137,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>280</x>
      <y>20</y>
      <width>60</width>
      <height>16</height>
@@ -146,6 +146,31 @@
    <property name="text">
     <string>Масштаб</string>
    </property>
+  </widget>
+  <widget class="QComboBox" name="mapp">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>20</y>
+     <width>75</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Схема</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Спутник</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Гибрид</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
