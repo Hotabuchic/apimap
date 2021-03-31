@@ -19,6 +19,7 @@ class MyWidget(QMainWindow):
         response = requests.get(
             f"http://geocode-maps.yandex.ru/1.x/?apikey={self.key}&geocode={self.search.text()}&format=json").json()
         toponym = response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
+        toponym_address = toponym["metaDataProperty"]["GeocoderMetaData"]["text"]
         self.l1, self.l2 = toponym["Point"]["pos"].split()
         self.spn = self.spnn.value()
         self.mapp = "map"
@@ -33,6 +34,7 @@ class MyWidget(QMainWindow):
         file.write(req.content)
         file.close()
         self.label.setPixmap(QPixmap('temp.png'))
+        self.address.setText(toponym_address)
 
     def cancel_search(self):
         req = requests.get(
@@ -42,6 +44,7 @@ class MyWidget(QMainWindow):
         file.write(req.content)
         file.close()
         self.label.setPixmap(QPixmap('temp.png'))
+        self.address.setText("")
 
     # def keyPressEvent(self, event):
     #     if event.key() == Qt.Key_PageUp:
