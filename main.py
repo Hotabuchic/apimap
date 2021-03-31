@@ -11,18 +11,23 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi('qt.ui', self)
+        self.key = "40d1649f-0493-4b70-98ba-98533de7710b"
         self.set_image()
         self.btn.clicked.connect(self.set_image)
 
     def set_image(self):
-        l1, l2, spn = self.longitude.value(), self.latitude.value(), self.spn.value()
+        response = requests.get(
+            f"http://geocode-maps.yandex.ru/1.x/?apikey={self.key}&geocode={self.search.text()}&format=json").json()
+        toponym = response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
+        l1, l2 = toponym["Point"]["pos"].split()
+        spn = self.spn.value()
         mapp = "map"
         if self.mapp.currentText() == "Спутник":
             mapp = "sat"
         elif self.mapp.currentText() == "Гибрид":
             mapp = "sat,skl"
         req = requests.get(
-            f"http://static-maps.yandex.ru/1.x/?ll={l1},{l2}&spn={spn},{spn}&l={mapp}")
+            f"http://static-maps.yandex.ru/1.x/?ll={l1},{l2}&spn={spn},{spn}&l={mapp}&pt={l1},{l2},org")
         file = open('temp.png', mode='wb')
         file.write(req.content)
         file.close()

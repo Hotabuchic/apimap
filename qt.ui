@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>635</width>
-    <height>519</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,76 +24,6 @@
    </property>
    <property name="text">
     <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>20</y>
-     <width>60</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Широта</string>
-   </property>
-  </widget>
-  <widget class="QDoubleSpinBox" name="latitude">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="decimals">
-    <number>4</number>
-   </property>
-   <property name="minimum">
-    <double>-180.000000000000000</double>
-   </property>
-   <property name="maximum">
-    <double>180.000000000000000</double>
-   </property>
-   <property name="value">
-    <double>55.752099999999999</double>
-   </property>
-  </widget>
-  <widget class="QDoubleSpinBox" name="longitude">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>20</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="decimals">
-    <number>4</number>
-   </property>
-   <property name="minimum">
-    <double>-180.000000000000000</double>
-   </property>
-   <property name="maximum">
-    <double>180.000000000000000</double>
-   </property>
-   <property name="value">
-    <double>37.623100000000001</double>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>20</y>
-     <width>60</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Долгота</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn">
@@ -171,6 +101,32 @@
      <string>Гибрид</string>
     </property>
    </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Поиск</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="search">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>20</y>
+     <width>221</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Москва</string>
+   </property>
   </widget>
  </widget>
  <resources/>
