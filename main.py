@@ -10,15 +10,20 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi('qt.ui', self)
+        self.index = False
         self.key = "40d1649f-0493-4b70-98ba-98533de7710b"
         self.set_image()
         self.btn.clicked.connect(self.set_image)
         self.cancel.clicked.connect(self.cancel_search)
+        self.indexx.stateChanged.connect(self.show_index)
 
     def set_image(self):
         response = requests.get(
             f"http://geocode-maps.yandex.ru/1.x/?apikey={self.key}&geocode={self.search.text()}&format=json").json()
         toponym = response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
+        index = ""
+        if self.index and "postal_code" in toponym["metaDataProperty"]["GeocoderMetaData"]["Address"]:
+            index = toponym["metaDataProperty"]["GeocoderMetaData"]["Address"]["postal_code"]
         toponym_address = toponym["metaDataProperty"]["GeocoderMetaData"]["text"]
         self.l1, self.l2 = toponym["Point"]["pos"].split()
         self.spn = self.spnn.value()
@@ -34,7 +39,7 @@ class MyWidget(QMainWindow):
         file.write(req.content)
         file.close()
         self.label.setPixmap(QPixmap('temp.png'))
-        self.address.setText(toponym_address)
+        self.address.setText(f"{toponym_address} {index}")
 
     def cancel_search(self):
         req = requests.get(
@@ -45,6 +50,10 @@ class MyWidget(QMainWindow):
         file.close()
         self.label.setPixmap(QPixmap('temp.png'))
         self.address.setText("")
+
+    def show_index(self):
+        self.index = not self.index
+        self.set_image()
 
     # def keyPressEvent(self, event):
     #     if event.key() == Qt.Key_PageUp:
