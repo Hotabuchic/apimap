@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>635</width>
-    <height>510</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>50</y>
+     <y>100</y>
      <width>621</width>
      <height>450</height>
     </rect>
@@ -39,7 +39,7 @@
     <string>Показать</string>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="spn">
+  <widget class="QDoubleSpinBox" name="spnn">
    <property name="geometry">
     <rect>
      <x>340</x>
@@ -77,7 +77,7 @@
     <string>Масштаб</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="mapp">
+  <widget class="QComboBox" name="mappp">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -126,6 +126,19 @@
    </property>
    <property name="text">
     <string>Москва</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>50</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Сброс поискового результата</string>
    </property>
   </widget>
  </widget>
