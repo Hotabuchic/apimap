@@ -55,13 +55,13 @@ class MyWidget(QMainWindow):
         self.index = not self.index
         self.set_image()
 
-    # def keyPressEvent(self, event):
-    #     if event.key() == Qt.Key_PageUp:
-    #         self.spn.setValue(self.spn.value() + 0.04)
-    #         self.set_image()
-    #     elif event.key() == Qt.Key_PageDown:
-    #         self.spn.setValue(self.spn.value() - 0.04)
-    #         self.set_image()
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_PageUp:
+            self.spn.setValue(self.spn.value() + 0.04)
+            self.set_image()
+        elif event.key() == Qt.Key_PageDown:
+            self.spn.setValue(self.spn.value() - 0.04)
+            self.set_image()
 
 
 if __name__ == '__main__':
